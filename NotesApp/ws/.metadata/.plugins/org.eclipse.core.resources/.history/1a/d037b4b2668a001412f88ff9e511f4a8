@@ -1,0 +1,28 @@
+package com.example.myapp.data;
+
+import java.util.Locale;
+
+public class Noteitem {
+	
+	private String key;
+	private String text;
+	public String getKey() {
+		return key;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+	public static Noteitem  getNew(){
+		
+		Locale locale=new Locale("en_US");
+		locale.setDefault(locale);
+		
+	}
+}

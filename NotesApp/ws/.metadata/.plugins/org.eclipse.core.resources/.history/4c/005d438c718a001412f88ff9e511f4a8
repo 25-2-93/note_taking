@@ -1,0 +1,41 @@
+package com.example.myapp.data;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.jar.Attributes.Name;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+public class NotesDataSource {
+	private static final String PREFKEY="note";
+	private static final String Name = null;
+	private SharedPreferences notePrefs;
+	public NotesDataSource(Context context)
+	{
+		
+		notePrefs=context.getSharedPreferences(PREFKEY,Context.MODE_PRIVATE);
+	}
+	public List<Noteitem> findAll(){
+		
+		List< Noteitem> noteList=new ArrayList<Noteitem>();
+		Noteitem note=Noteitem.getNew();
+		noteList.add(note);
+		
+		return noteList;
+		
+	}
+	public boolean update(Noteitem note)
+	{
+		SharedPreferences.Editor editor = notePrefs.edit();
+		editor.putString(note.getKey(), note.getText());
+		editor.commit();
+		
+		return true;
+	}
+	public boolean remove(Noteitem note)
+	{
+		return true;
+	}
+
+}

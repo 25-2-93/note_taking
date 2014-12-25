@@ -1,0 +1,9 @@
+package com.example.myapp.data;
+
+public class Noteitem {
+	
+	private String key;
+	private String text;
+	
+
+}
